@@ -52,8 +52,12 @@ public class TextBased {
     private Item shovel;
     private Item food;
     private Item silverware;
+    private Item goldKey;
+    private Item book;
 
     private Obstacle debris;
+    private Obstacle bookshelf;
+    private Obstacle oakDoor;
 
     public Room currentRoom;
     public String northOfCurrentRoom = "";
@@ -65,28 +69,26 @@ public class TextBased {
     String bbb = "you live. The master of the house has fallen ill and her husband has implored you";
     String ccc = "to fetch the doctor of Innsmouth, six leagues away. You have been traveling at full";
     String ddd = "speed for the last four and a half leagues and have been making good time.";
-    
+
     String eee = "At a particularly sharp turn you suddenly feel the world heave as you realize the carriage";
     String fff = "is tipping over. There is a terrible crash and everything goes black for a moment. When you";
     String ggg = "come to and manage to crawl out from the wreckage you find the driver and one of the horses";
     String hhh = "have broken their necks and the second horse is nowhere to be found. You look around in";
     String iii = "bewilderment and spot a light shining through the treeline.";
-    
+
     String jjj = "You start towards the light and as you emerge from the bosket you find yourself outside a";
     String kkk = "walled manor house much like the one where you work. The large gate in the wall is open";
     String lll = "but you see no guards or servants around.";
-    
+
     String mmm = "You decide that the situation warrants a possible faux-pas and step under the gate to simply";
     String nnn = "walk up to the house and knock on the door.";
-    
+
     String ooo = "Just as you walk through the massive oak gates, they shut behind you with a thunderous boom.";
     String ppp = "Startled you spin around to see who closed it but find no one. You rush back, push and pull";
     String qqq = "on the gates with all your might to no avail. The gate will not budge.";
-    
+
     String rrr = "You are trapped.";
-    
-    
-    
+
     String sss = "                ----------------------------------------------------------";
 
 //    public void commands() {
@@ -154,11 +156,15 @@ public class TextBased {
         silverware = new Item("SILVERWARE", Descriptions.ITEM_SILVERWARE, "N/A");
         shovel = new Item("SHOVEL", Descriptions.ITEM_SHOVEL, "N/A");
         food = new Item("FOOD", Descriptions.ITEM_FOOD, "N/A");
+        goldKey = new Item("GOLD KEY", Descriptions.ITEM_GOLD_KEY, "N/A");
+        book = new Item("BOOK", Descriptions.ITEM_BOOK, "N/A");
 
         //      Creating Obstacles
         debris = new Obstacle("DEBRIS", Descriptions.OBSTACLE_DEBRIS_DESCRIPTION, Descriptions.OBSTACLE_DEBRIS_REMOVE, "SHOVEL");
+        bookshelf = new Obstacle("BOOKSHELF", Descriptions.OBSTACLE_BOOKSHELF_DESCRIPTION, Descriptions.OBSTACLE_BOOKSHELF_REMOVE, "BOOK");
+        oakDoor = new Obstacle("OAK DOOR", Descriptions.OBSTACLE_OAKDOOR_DESCRIPTION, Descriptions.OBSTACLE_OAKDOOR_REMOVE, "GOLD KEY");
 
-        //      adding rooms to map
+//      adding rooms to map
         roomMap.addRoom(hallwayMainA);
         roomMap.addRoom(hallwayMainB);
         roomMap.addRoom(hallwayMainC);
@@ -213,11 +219,22 @@ public class TextBased {
         kitchen.addItemToRoom(silverware);
         eastYard.addItemToRoom(shovel);
         pantry.addItemToRoom(food);
+        servantBedB.addItemToRoom(goldKey);
+        masterBed.addItemToRoom(book);
 
         //      placing obstacles
         yard.addObstacleToRoom(debris, "NORTH");
         yard.setHasObstacle(true);
         yard.setObstacleDescription(Descriptions.ROOM_YARD_OBSTACLE);
+        
+        eastLibrary.addObstacleToRoom(bookshelf, "NORTH");
+        eastLibrary.setHasObstacle(true);
+        eastLibrary.setObstacleDescription(Descriptions.OBSTACLE_BOOKSHELF_DESCRIPTION);
+        
+        hallwayUpperWestB.addObstacleToRoom(oakDoor, "SOUTH");
+        hallwayUpperWestB.setHasObstacle(true);
+        hallwayUpperWestB.setObstacleDescription(Descriptions.OBSTACLE_OAKDOOR_DESCRIPTION);
+        
 
         //  Game initialization
         //      Setting default start position
@@ -464,7 +481,7 @@ public class TextBased {
         if (!currentRoom.getHint()) {
             System.out.println("You are in the " + currentRoom.getShortDescription() + ". " + currentRoom.getLongDescription());
             if (currentRoom.HasObstacle()) {
-                System.out.println(currentRoom.getObstacleDescription());
+                System.out.println(currentRoom.getObstacleDescription() + currentRoom.getExitWithObstacle());
             } else {
                 //Do nothing
             }
@@ -719,7 +736,7 @@ public class TextBased {
         if (directionToTry.equals("NORTH")) {
             if (!northOfCurrentRoom.equals("")) {
                 if (currentRoom.HasObstacle() && currentRoom.getExitWithObstacle().equals(directionToTry)) {
-                    System.out.println(currentRoom.getObstacleDescription() + " You cannot go there.");
+                    System.out.println(currentRoom.getObstacleDescription()+ currentRoom.getExitWithObstacle() +". You cannot go there.");
                 } else {
                     currentRoom.setHasPlayer(false);
                     try {

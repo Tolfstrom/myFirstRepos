@@ -54,6 +54,7 @@ public class Descriptions {
 
     static String ROOM_MASTERBED_LONG;
     static String ROOM_MASTERBED_LONG_WITH_HINT;
+    static String ROOM_MASTERBED_OBSTACLE;
     static String ROOM_SERVANTBED_A_LONG;
     static String ROOM_SERVANTBED_A_LONG_WITH_HINT;
     static String ROOM_SERVANTBED_B_LONG;
@@ -94,9 +95,17 @@ public class Descriptions {
     static String ITEM_SHOVEL;
     static String ITEM_FOOD;
     static String ITEM_SILVERWARE;
+    static String ITEM_GOLD_KEY;
+    static String ITEM_BOOK;
+    
 
     static String OBSTACLE_DEBRIS_DESCRIPTION;
     static String OBSTACLE_DEBRIS_REMOVE;
+    static String OBSTACLE_BOOKSHELF_DESCRIPTION;
+    static String OBSTACLE_BOOKSHELF_REMOVE;
+    static String OBSTACLE_OAKDOOR_DESCRIPTION;
+    static String OBSTACLE_OAKDOOR_REMOVE;
+    
 
     public Descriptions() {
 
@@ -152,20 +161,27 @@ public class Descriptions {
         ROOM_HALLWAY_LOWER_EAST_C_LONG_WITH_HINT = "Lower east C hint";
         ROOM_HALLWAY_LOWER_EAST_D_LONG = "Lower east D";
         ROOM_HALLWAY_LOWER_EAST_D_LONG_WITH_HINT = "Lower east D hint";
+        
         ROOM_LOUNGE_LONG = "Lounge";
         ROOM_LOUNGE_LONG_WITH_HINT = "Lounge hint";
+        
         ROOM_STUDY_LONG = "Study";
         ROOM_STUDY_LONG_WITH_HINT = "Study hint";
+        
         ROOM_SECRET_ROOM_LONG = "Secret";
         ROOM_SECRET_ROOM_LONG_WITH_HINT = "Secret hint";
+        
         ROOM_MASTERBED_LONG = "Master bedroom";
         ROOM_MASTERBED_LONG_WITH_HINT = "Master bedroom hint";
+        ROOM_MASTERBED_OBSTACLE = "There is a locked door in the ";
+        
         ROOM_SERVANTBED_A_LONG = "Servants A";
         ROOM_SERVANTBED_A_LONG_WITH_HINT = "Servants A hint";
         ROOM_SERVANTBED_B_LONG = "Servants B";
         ROOM_SERVANTBED_B_LONG_WITH_HINT = "Servants B hint";
         ROOM_SERVANTBED_C_LONG = "Servants C";
         ROOM_SERVANTBED_C_LONG_WITH_HINT = "Servants C hint";
+        
         ROOM_WESTWC_LONG = "West WC";
         ROOM_WESTWC_LONG_WITH_HINT = "West WC hint";
         ROOM_EASTWC_LONG = "East WC";
@@ -173,8 +189,8 @@ public class Descriptions {
 
         ROOM_WEST_LIBRARY_LONG = "The library is filled with bookshelves.";
         ROOM_WEST_LIBRARY_LONG_WITH_HINT = "The library is filled with bookshelves and there are two doors.";
-        ROOM_EAST_LIBRARY_LONG = "East library";
-        ROOM_EAST_LIBRARY_LONG_WITH_HINT = "East library hint";
+        ROOM_EAST_LIBRARY_LONG = "The library is filled with books and has a dusty smell to it.";
+        ROOM_EAST_LIBRARY_LONG_WITH_HINT = "There are doors in all the walls here";
 
         ROOM_KITCHEN_LONG = "The kitchen is full of food and other kitchen stuff.";
         ROOM_KITCHEN_LONG_WITH_HINT = "The kitchen is full of things that usually belong in a kitchen. "
@@ -195,7 +211,7 @@ public class Descriptions {
         ROOM_YARD_LONG = "The yard is bathed in bleak moonlight and the cold wind "
                 + "\nhowling in the trees goes straight through your clothes, chilling you to the bone.";
         ROOM_YARD_LONG_WITH_HINT = "The yard is empty except for the front door.";
-        ROOM_YARD_OBSTACLE = "The front door is blocked by a pile of rubble and DEBRIS.";
+        ROOM_YARD_OBSTACLE = "A pile of rubble and DEBRIS blocks the front door in the ";
 
         ROOM_WESTYARD_LONG = "The west side of the yard is just as cold as the main part. "
                 + "\nThere does not seem to be any relief from the biting cold.";
@@ -210,12 +226,19 @@ public class Descriptions {
         ITEM_KNIFE = "A sturdy kitchen knife.";
         ITEM_SILVERWARE = "A pair of knives, forks and spoons in dull, stained silver.";
         ITEM_SHOVEL = "A decent shovel. It is a little bent and rusty but looks as if it would work as intended.";
+        ITEM_GOLD_KEY = "A shiny golden key.";
+        ITEM_BOOK = "A book in suspiciously pristine shape.";
 
         OBSTACLE_DEBRIS_DESCRIPTION = "It seems to be comprised mostly of bits of old furniture and "
                 + "\nother miscellaneous items packed together with earth.";
         OBSTACLE_DEBRIS_REMOVE = "You heave to. Using the shovel as both iron crow, hatchet and "
                 + "\nshovel you spend a good hour diminishing the pile. Soaked with "
                 + "\nsweat you are finally done and the way is clear.";
+        OBSTACLE_OAKDOOR_DESCRIPTION = "A sturdy oak door, definitely locked, blocks your way in the ";
+        OBSTACLE_OAKDOOR_REMOVE = "You turn the key and the lock clicks open.";
+        OBSTACLE_BOOKSHELF_DESCRIPTION = "There are bookshelves in the ";
+        OBSTACLE_BOOKSHELF_REMOVE = "The book slides into place in a spot that "
+                + "\nobviously is made for it and the bookshelf swings aside to reveal a secret room";
 
     }
 }
