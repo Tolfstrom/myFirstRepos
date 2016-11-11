@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<room>
+    <hasObstacle>false</hasObstacle>
+    <hasPlayer>true</hasPlayer>
+    <hint>true</hint>
+    <id>11</id>
+    <longDescription>Upper west B</longDescription>
+    <longDescriptionWithHint>Upper west B hint</longDescriptionWithHint>
+    <posX>1</posX>
+    <posY>0</posY>
+    <shortDescription>Hallway</shortDescription>
+</room>
