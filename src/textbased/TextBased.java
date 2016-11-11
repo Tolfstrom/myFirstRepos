@@ -227,8 +227,8 @@ public class TextBased {
         
         if (!previousGame) {
             
-            printIntro("Testing this method. A little example text to get things going.");
-            printIntro("Another one because this might casuse issues. Trying to implement two things after one another.");
+//            printIntro("Testing this method. A little example text to get things going.");
+//            printIntro("Another one because this might casuse issues. Trying to implement two things after one another.");
             
             
             
