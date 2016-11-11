@@ -61,6 +61,34 @@ public class TextBased {
     public String westOfCurrentRoom = "";
     public String southOfCurrentRoom = "";
 
+    String aaa = "You are traveling by carriage to the nearest town away from the manor house where";
+    String bbb = "you live. The master of the house has fallen ill and her husband has implored you";
+    String ccc = "to fetch the doctor of Innsmouth, six leagues away. You have been traveling at full";
+    String ddd = "speed for the last four and a half leagues and have been making good time.";
+    
+    String eee = "At a particularly sharp turn you suddenly feel the world heave as you realize the carriage";
+    String fff = "is tipping over. There is a terrible crash and everything goes black for a moment. When you";
+    String ggg = "come to and manage to crawl out from the wreckage you find the driver and one of the horses";
+    String hhh = "have broken their necks and the second horse is nowhere to be found. You look around in";
+    String iii = "bewilderment and spot a light shining through the treeline.";
+    
+    String jjj = "You start towards the light and as you emerge from the bosket you find yourself outside a";
+    String kkk = "walled manor house much like the one where you work. The large gate in the wall is open";
+    String lll = "but you see no guards or servants around.";
+    
+    String mmm = "You decide that the situation warrants a possible faux-pas and step under the gate to simply";
+    String nnn = "walk up to the house and knock on the door.";
+    
+    String ooo = "Just as you walk through the massive oak gates, they shut behind you with a thunderous boom.";
+    String ppp = "Startled you spin around to see who closed it but find no one. You rush back, push and pull";
+    String qqq = "on the gates with all your might to no avail. The gate will not budge.";
+    
+    String rrr = "You are trapped.";
+    
+    
+    
+    String sss = "                ----------------------------------------------------------";
+
 //    public void commands() {
 //        String cmdLook = "";
 //        String cmdNorth = "";
@@ -98,7 +126,6 @@ public class TextBased {
 
         kitchen = new Room(20, "Kitchen", Descriptions.ROOM_KITCHEN_LONG, Descriptions.ROOM_KITCHEN_LONG_WITH_HINT, 1, 4);
         pantry = new Room(21, "Pantry", Descriptions.ROOM_PANTRY_LONG, Descriptions.ROOM_PANTRY_LONG_WITH_HINT, 0, 4);
-        
 
         westLibrary = new Room(22, "West Library", Descriptions.ROOM_WEST_LIBRARY_LONG, Descriptions.ROOM_WEST_LIBRARY_LONG_WITH_HINT, 5, 1);
         eastLibrary = new Room(23, "East Library", Descriptions.ROOM_EAST_LIBRARY_LONG, Descriptions.ROOM_EAST_LIBRARY_LONG, 6, 1);
@@ -121,7 +148,6 @@ public class TextBased {
         westWC = new Room(36, "West WC", Descriptions.ROOM_WESTWC_LONG, Descriptions.ROOM_WESTWC_LONG_WITH_HINT, 0, 0);
         eastWC = new Room(37, "East WC", Descriptions.ROOM_EASTWC_LONG, Descriptions.ROOM_EASTWC_LONG_WITH_HINT, 5, 4);
         boiler = new Room(38, "Boiler room", Descriptions.ROOM_BOILER_LONG, Descriptions.ROOM_BOILER_LONG_WITH_HINT, 1, 6);
-        
 
         //      Creating Items
         knife = new Item("KNIFE", Descriptions.ITEM_KNIFE, "N/A");
@@ -206,10 +232,6 @@ public class TextBased {
             AllRoomsToXml.loadObject("allRooms.xml", roomMap);
 
         }
-        
-        
-        
-        
 
         //      adding player input scanner
         String playerInput;
@@ -224,45 +246,41 @@ public class TextBased {
         System.out.println("");
         System.out.println("");
         System.out.println("");
-        
+
         if (!previousGame) {
-            
-//            printIntro("Testing this method. A little example text to get things going.");
-//            printIntro("Another one because this might casuse issues. Trying to implement two things after one another.");
-            
-            
-            
-            
-            
-            
-            
-            System.out.println("You are traveling by carriage to the nearest town away from the manor house where");
-            System.out.println("you live. The master of the house has fallen ill and her husband has implored you");
-            System.out.println("to fetch the doctor of Innsmouth, six leagues away. You have been traveling at full");
-            System.out.println("speed for the last four and a half leagues and have been making good time.");
-            System.out.println("");
-            System.out.println("At a particularly sharp turn you suddenly feel the world heave as you realize the carriage");
-            System.out.println("is tipping over. There is a terrible crash and everything goes black for a moment. When you");
-            System.out.println("come to and manage to crawl out from the wreckage you find the driver and one of the horses");
-            System.out.println("have broken their necks and the second horse is nowhere to be found. You look around in");
-            System.out.println("bewilderment and spot a light shining through the treeline.");
-            System.out.println("");
-            System.out.println("You start towards the light and as you emerge from the bosket you find yourself outside a");
-            System.out.println("walled manor house much like the one where you work. The large gate in the wall is open");
-            System.out.println("but you see no guards or servants around.");
-            System.out.println("");
-            System.out.println("You decide that the situation warrants a possible faux-pas and step under the gate to simply");
-            System.out.println("walk up to the house and knock on the door.");
-            System.out.println("");
-            System.out.println("Just as you walk through the massive oak gates, they shut behind you with a thunderous boom.");
-            System.out.println("Startled you spin around to see who closed it but find no one. You rush back, push and pull");
-            System.out.println("on the gates with all your might to no avail. The gate will not budge.");
-            System.out.println("");
-            System.out.println("You are trapped.");
-            System.out.println("");
-            System.out.println("");
-            System.out.println("");
-            System.out.println("                ----------------------------------------------------------");
+
+            try {
+                printIntro(aaa);
+                printIntro(bbb);
+                printIntro(ccc);
+                printIntro(ddd);
+                System.out.println("");
+                printIntro(eee);
+                printIntro(fff);
+                printIntro(ggg);
+                printIntro(hhh);
+                printIntro(iii);
+
+                printIntro(jjj);
+                printIntro(kkk);
+                printIntro(lll);
+                System.out.println("");
+                printIntro(mmm);
+                printIntro(nnn);
+                System.out.println("");
+                printIntro(ooo);
+                printIntro(ppp);
+                printIntro(qqq);
+                System.out.println("");
+                printIntro(rrr);
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                printIntro(sss);
+            } catch (InterruptedException e) {
+
+            }
+
         } else {
         }
 
@@ -371,17 +389,16 @@ public class TextBased {
 
     }
 
-    public void printIntro(String string) {
-        
-        for (int i = 0; i < string.length(); i++) {
-            System.out.print(string.substring(0, i)+"\r");
-            
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException ex) {
-                System.out.println("sleep interrupted");
-            }
+    public void printIntro(String string) throws InterruptedException {
+
+        for (int i = 0; i < string.length() + 1; i++) {
+
+            System.out.print(string.substring(0, i) + "\r");
+            Thread.sleep(25);
+
         }
+        System.out.println("");
+
     }
 
     public void printHelpText() {
